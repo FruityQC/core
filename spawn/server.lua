@@ -22,8 +22,8 @@ AddEventHandler('playerConnecting', function(name, setKickReason, deferrals)
             if not result then
                 print('STEAM_ID ERR')
 
-                MySQL.Async.execute('INSERT INTO user_identifiers (steamname, steamid, license) VALUES (@steamname, @steamid, @license'),
-                {['@steamname'] = GetPlayerName(source), ['@steamid'] = steamid, ['@license'] = license})
+                MySQL.Async.execute('INSERT INTO user_identifiers (steamname, steamid, license) VALUES (@steamname, @steamid, @license)', {
+                    ['@steamname'] = GetPlayerName(source), ['@steamid'] = steamid, ['@license'] = license})
             else
                 print("Steamid OK")
             end
