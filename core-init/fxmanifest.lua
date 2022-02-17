@@ -1,7 +1,7 @@
 fx_version 'bodacious'
 games {'gta5'}
 
-author 'Fruity'
+author 'YoungDev'
 description 'None'
 
 server_scripts {
