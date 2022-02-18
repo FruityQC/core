@@ -22,6 +22,6 @@ Citizen.CreateThread(function()
         Citizen.Wait(5000)
 
         lastX, lastY, lastZ = table.unpack(GetEntityCoords(GetPlayerPed(-1), true))
-        TriggerServerEvent('FWLSavePlayerPosition')
+        TriggerServerEvent('FW:SavePlayerPosition')
     end
 end)
