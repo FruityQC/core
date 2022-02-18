@@ -4,5 +4,7 @@ games {'gta5'}
 author 'YoungDev'
 description 'Core Spawn Manager'
 
-client_script 'client.lua'
+client_scripts {
+    'client.lua'
+}
 server_script 'server.lua'

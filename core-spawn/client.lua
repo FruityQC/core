@@ -7,9 +7,10 @@ RegisterNetEvent('FW:lastPosition')
 AddEventHandler('FW:lastPosition'). function(PosX, PosY, PosZ)
     Citizen.Wait(1)
 
-    local defaultModel = GetHashKey('csb_stripper_01')
+    local defaultModel = GetHashKey('a_m_y_acult_02')
     RequestModel(defaultModel)
     while not HasModelLoaded(defaultModel) do 
+        print('Waiting for Ped to load')
         Citizen.Wait(1)
     end
     SetPlayerModel(PlayerId(), defaultModel)
