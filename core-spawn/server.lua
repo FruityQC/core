@@ -1,7 +1,8 @@
 RegisterServerEvent('FW:SpawnPlayer')
 AddEventHandler('FW:SpawnPlayer', function()
+    print('Player Being TP !')
     local source = source
-    MySQL.Async.fetchScalar('SELECT * FROM identifiers WHERE steamid = @steamid', {
+    MySQL.Async.fetchScalar('SELECT * FROM users WHERE steamid = @steamid', {
         ['@steamid'] = GetPlayerIdentifier(source)
     }, function(result)
         local SpawnPos = json.decode(result[1].position)
@@ -11,6 +12,7 @@ end)
 
 RegisterServerEvent('FW:SavePlayerPosition')
 AddEventHandler('FW:SavePlayerPosition', function(PosX, PosY, PosZ)
+    print('Last pos is being saved !')
     local source = source
     MySQL.Async.fetchScalar('UPDATE users SET position = @position WHERE steamid', {
         ['@steamid'] = GetPlayerIdentifier(source),

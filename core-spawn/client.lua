@@ -1,5 +1,6 @@
 AddEventHandler('playerSpawned', function()
     TriggerServerEvent('FW:SpawnPlayer')
+    print('Player Spawned !')
 end)
 
 RegisterNetEvent('FW:lastPosition')
